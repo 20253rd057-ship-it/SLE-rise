@@ -4,81 +4,99 @@
 
 // ACTIVIDADES
 const activities = [
-  {
-    name: "CAMINAR",
-    icon: "🚶",
-    action: "Camina"
-  },
-  {
-    name: "CORRER",
-    icon: "🏃",
-    action: "Corre"
-  },
-  {
-    name: "SENTADILLAS",
-    icon: "🏋️",
-    action: "Haz sentadillas"
-  },
-  {
-    name: "ABDOMINALES",
-    icon: "💪",
-    action: "Haz abdominales"
-  },
-  {
-    name: "PLANCHA",
-    icon: "🧘",
-    action: "Haz plancha"
-  },
-  {
-    name: "SALTAR CUERDA",
-    icon: "🤸",
-    action: "Salta la cuerda"
-  },
-  {
-    name: "ESTIRAMIENTOS",
-    icon: "🙆",
-    action: "Realiza estiramientos"
-  },
-  {
-    name: "BAILAR",
-    icon: "💃",
-    action: "Baila"
-  },
-  {
-    name: "BICICLETA",
-    icon: "🚴",
-    action: "Anda en bicicleta"
-  },
-  {
-    name: "SUBIR ESCALERAS",
-    icon: "🪜",
-    action: "Sube escaleras"
-  },
-  {
-    name: "ZANCADAS",
-    icon: "🦵",
-    action: "Haz zancadas"
-  },
-  {
-    name: "BURPEES",
-    icon: "🔥",
-    action: "Haz burpees"
-  },
-  {
-    name: "YOGA",
-    icon: "🧘‍♀️",
-    action: "Practica yoga"
-  },
-  {
-    name: "MOUNTAIN CLIMBERS",
-    icon: "⛰️",
-    action: "Haz mountain climbers"
-  },
-  {
-    name: "JUMPING JACKS",
-    icon: "⭐",
-    action: "Haz jumping jacks"
-  }
+
+{ name:"CAMINAR", icon:"🚶", action:"Camina" },
+
+{ name:"CORRER", icon:"🏃", action:"Corre" },
+
+{ name:"TROTAR", icon:"🏃‍♂️", action:"Trota" },
+
+{ name:"SALTAR LA CUERDA", icon:"🪢", action:"Salta la cuerda" },
+
+{ name:"SENTADILLAS", icon:"🏋️", action:"Haz sentadillas" },
+
+{ name:"ABDOMINALES", icon:"💪", action:"Haz abdominales" },
+
+{ name:"PLANCHA", icon:"🧘", action:"Haz plancha" },
+
+{ name:"LAGARTIJAS", icon:"🤸", action:"Haz lagartijas" },
+
+{ name:"BURPEES", icon:"🔥", action:"Haz burpees" },
+
+{ name:"JUMPING JACKS", icon:"⭐", action:"Haz jumping jacks" },
+
+{ name:"ZANCADAS", icon:"🦵", action:"Haz zancadas" },
+
+{ name:"ESCALADORES", icon:"⛰️", action:"Haz mountain climbers" },
+
+{ name:"BICICLETA", icon:"🚴", action:"Anda en bicicleta" },
+
+{ name:"PATINAR", icon:"🛼", action:"Patina" },
+
+{ name:"NADAR", icon:"🏊", action:"Nada" },
+
+{ name:"BAILAR", icon:"💃", action:"Baila" },
+
+{ name:"YOGA", icon:"🧘‍♀️", action:"Practica yoga" },
+
+{ name:"PILATES", icon:"🤍", action:"Practica pilates" },
+
+{ name:"ESTIRAMIENTOS", icon:"🙆", action:"Realiza estiramientos" },
+
+{ name:"SUBIR ESCALERAS", icon:"🪜", action:"Sube escaleras" },
+
+{ name:"CAMINATA RÁPIDA", icon:"🚶‍♀️", action:"Realiza una caminata rápida" },
+
+{ name:"TROTAR EN EL LUGAR", icon:"🏃", action:"Trota en tu lugar" },
+
+{ name:"SALTOS", icon:"⬆️", action:"Haz saltos" },
+
+{ name:"SALTOS LATERALES", icon:"↔️", action:"Haz saltos laterales" },
+
+{ name:"SALTOS DE TIJERA", icon:"✂️", action:"Haz saltos de tijera" },
+
+{ name:"SQUAT JUMPS", icon:"🏋️‍♀️", action:"Haz squat jumps" },
+
+{ name:"ELEVACIÓN DE RODILLAS", icon:"🦿", action:"Eleva las rodillas" },
+
+{ name:"TALONES A LOS GLÚTEOS", icon:"🦶", action:"Lleva los talones a los glúteos" },
+
+{ name:"FLEXIONES", icon:"💪", action:"Haz flexiones" },
+
+{ name:"PLANCHA LATERAL", icon:"🧘", action:"Haz plancha lateral" },
+
+{ name:"ESCALAR COLINA", icon:"🏔️", action:"Sube una colina" },
+
+{ name:"CAMINAR CON TU MASCOTA", icon:"🐶", action:"Sal a caminar con tu mascota" },
+
+{ name:"JUGAR FÚTBOL", icon:"⚽", action:"Juega fútbol" },
+
+{ name:"JUGAR BÁSQUETBOL", icon:"🏀", action:"Juega básquetbol" },
+
+{ name:"JUGAR VOLEIBOL", icon:"🏐", action:"Juega voleibol" },
+
+{ name:"TENIS", icon:"🎾", action:"Juega tenis" },
+
+{ name:"BÁDMINTON", icon:"🏸", action:"Juega bádminton" },
+
+{ name:"SUBIR Y BAJAR ESCALONES", icon:"🪜", action:"Sube y baja escalones" },
+
+{ name:"MARCHAR", icon:"🥾", action:"Marcha en tu lugar" },
+
+{ name:"BAILE AERÓBICO", icon:"🎶", action:"Realiza baile aeróbico" },
+
+{ name:"RESPIRACIÓN PROFUNDA", icon:"🌬️", action:"Realiza ejercicios de respiración" },
+
+{ name:"CAMINATA ECOLÓGICA", icon:"🌳", action:"Realiza una caminata ecológica" },
+
+{ name:"TAICHI", icon:"☯️", action:"Practica Tai Chi" },
+
+{ name:"HULA HOOP", icon:"⭕", action:"Usa un aro hula hoop" },
+
+{ name:"EJERCICIOS DE MOVILIDAD", icon:"🤸‍♀️", action:"Realiza ejercicios de movilidad" },
+
+{ name:"EQUILIBRIO", icon:"⚖️", action:"Practica ejercicios de equilibrio" }
+
 ];
 
 
