@@ -1,174 +1,558 @@
-const INSTAGRAM_URL = "https://www.instagram.com/sle.rise?igsh=MWl2dW8zZ3kwcjVkNw%3D%3D&utm_source=qr";
+// ===============================
+// SLE RISE - MÁQUINA DE RETOS
+// ===============================
 
+// ACTIVIDADES
 const activities = [
-  { name: "CAMINAR", icon: "🚶", phrase: "Camina" },
-  { name: "CORRER", icon: "🏃", phrase: "Corre" },
-  { name: "SENTADILLAS", icon: "🏋️", phrase: "Realiza sentadillas" },
-  { name: "ESTIRAMIENTOS", icon: "🤸", phrase: "Haz estiramientos" },
-  { name: "BAILAR", icon: "💃", phrase: "Baila" },
-  { name: "BICICLETA", icon: "🚴", phrase: "Anda en bicicleta" },
-  { name: "PLANCHA", icon: "🧘", phrase: "Haz plancha" },
-  { name: "ESCALERAS", icon: "🪜", phrase: "Sube escaleras" }
+  {
+    name: "CAMINAR",
+    icon: "🚶",
+    action: "Camina"
+  },
+  {
+    name: "CORRER",
+    icon: "🏃",
+    action: "Corre"
+  },
+  {
+    name: "SENTADILLAS",
+    icon: "🏋️",
+    action: "Haz sentadillas"
+  },
+  {
+    name: "ABDOMINALES",
+    icon: "💪",
+    action: "Haz abdominales"
+  },
+  {
+    name: "PLANCHA",
+    icon: "🧘",
+    action: "Haz plancha"
+  },
+  {
+    name: "SALTAR CUERDA",
+    icon: "🤸",
+    action: "Salta la cuerda"
+  },
+  {
+    name: "ESTIRAMIENTOS",
+    icon: "🙆",
+    action: "Realiza estiramientos"
+  },
+  {
+    name: "BAILAR",
+    icon: "💃",
+    action: "Baila"
+  },
+  {
+    name: "BICICLETA",
+    icon: "🚴",
+    action: "Anda en bicicleta"
+  },
+  {
+    name: "SUBIR ESCALERAS",
+    icon: "🪜",
+    action: "Sube escaleras"
+  },
+  {
+    name: "ZANCADAS",
+    icon: "🦵",
+    action: "Haz zancadas"
+  },
+  {
+    name: "BURPEES",
+    icon: "🔥",
+    action: "Haz burpees"
+  },
+  {
+    name: "YOGA",
+    icon: "🧘‍♀️",
+    action: "Practica yoga"
+  },
+  {
+    name: "MOUNTAIN CLIMBERS",
+    icon: "⛰️",
+    action: "Haz mountain climbers"
+  },
+  {
+    name: "JUMPING JACKS",
+    icon: "⭐",
+    action: "Haz jumping jacks"
+  }
 ];
 
+
+// DURACIONES / CANTIDADES
 const durations = [
-  { name: "10 MINUTOS", phrase: "durante 10 minutos" },
-  { name: "15 MINUTOS", phrase: "durante 15 minutos" },
-  { name: "20 MINUTOS", phrase: "durante 20 minutos" },
-  { name: "30 MINUTOS", phrase: "durante 30 minutos" },
-  { name: "10 REPETICIONES", phrase: "por 10 repeticiones" },
-  { name: "15 REPETICIONES", phrase: "por 15 repeticiones" },
-  { name: "20 REPETICIONES", phrase: "por 20 repeticiones" }
+  {
+    name: "5 MINUTOS",
+    text: "durante 5 minutos"
+  },
+  {
+    name: "10 MINUTOS",
+    text: "durante 10 minutos"
+  },
+  {
+    name: "15 MINUTOS",
+    text: "durante 15 minutos"
+  },
+  {
+    name: "20 MINUTOS",
+    text: "durante 20 minutos"
+  },
+  {
+    name: "30 MINUTOS",
+    text: "durante 30 minutos"
+  },
+  {
+    name: "45 MINUTOS",
+    text: "durante 45 minutos"
+  },
+  {
+    name: "10 REPETICIONES",
+    text: "por 10 repeticiones"
+  },
+  {
+    name: "15 REPETICIONES",
+    text: "por 15 repeticiones"
+  },
+  {
+    name: "20 REPETICIONES",
+    text: "por 20 repeticiones"
+  },
+  {
+    name: "30 REPETICIONES",
+    text: "por 30 repeticiones"
+  }
 ];
 
+
+// CONDICIONES
 const conditions = [
-  { name: "AL AIRE LIBRE", icon: "🌳", phrase: "al aire libre" },
-  { name: "CON MÚSICA", icon: "🎵", phrase: "con música" },
-  { name: "CON UN AMIGO", icon: "👥", phrase: "con un amigo" },
-  { name: "A TU RITMO", icon: "💜", phrase: "a tu propio ritmo" },
-  { name: "POR LA MAÑANA", icon: "🌅", phrase: "por la mañana" },
-  { name: "POR LA TARDE", icon: "🌇", phrase: "por la tarde" }
+  {
+    name: "AL AIRE LIBRE",
+    icon: "🌳",
+    text: "al aire libre"
+  },
+  {
+    name: "CON MÚSICA",
+    icon: "🎵",
+    text: "escuchando tu música favorita"
+  },
+  {
+    name: "CON UN AMIGO",
+    icon: "👥",
+    text: "con un amigo"
+  },
+  {
+    name: "EN CASA",
+    icon: "🏠",
+    text: "desde casa"
+  },
+  {
+    name: "A TU RITMO",
+    icon: "💜",
+    text: "a tu propio ritmo"
+  },
+  {
+    name: "POR LA MAÑANA",
+    icon: "🌅",
+    text: "por la mañana"
+  },
+  {
+    name: "POR LA TARDE",
+    icon: "🌇",
+    text: "por la tarde"
+  },
+  {
+    name: "CON BUENA POSTURA",
+    icon: "✅",
+    text: "manteniendo una buena postura"
+  },
+  {
+    name: "RITMO MODERADO",
+    icon: "⚡",
+    text: "a un ritmo moderado"
+  },
+  {
+    name: "SIN DISTRACCIONES",
+    icon: "🎯",
+    text: "sin distracciones"
+  }
 ];
 
-const $ = (id) => document.getElementById(id);
 
-const activityText = $("activityText");
-const durationText = $("durationText");
-const conditionText = $("conditionText");
-const activityIcon = $("activityIcon");
-const durationIcon = $("durationIcon");
-const conditionIcon = $("conditionIcon");
-const finalChallenge = $("finalChallenge");
-const generateBtn = $("generateBtn");
-const completeBtn = $("completeBtn");
-const completeMessage = $("completeMessage");
-const lever = $("lever");
-const completedCount = $("completedCount");
-const streakCount = $("streakCount");
-const resetProgress = $("resetProgress");
-const toast = $("toast");
-const menuToggle = $("menuToggle");
-const navMenu = $("navMenu");
+// ===============================
+// ELEMENTOS DEL HTML
+// ===============================
 
-let isGenerating = false;
-let currentChallengeKey = null;
+const activityIcon =
+  document.getElementById("activityIcon");
 
-function randomItem(list) {
-  return list[Math.floor(Math.random() * list.length)];
+const activityText =
+  document.getElementById("activityText");
+
+const durationIcon =
+  document.getElementById("durationIcon");
+
+const durationText =
+  document.getElementById("durationText");
+
+const conditionIcon =
+  document.getElementById("conditionIcon");
+
+const conditionText =
+  document.getElementById("conditionText");
+
+const finalChallenge =
+  document.getElementById("finalChallenge");
+
+const generateBtn =
+  document.getElementById("generateBtn");
+
+const lever =
+  document.getElementById("lever");
+
+const completeBtn =
+  document.getElementById("completeBtn");
+
+const completeMessage =
+  document.getElementById("completeMessage");
+
+const completedCount =
+  document.getElementById("completedCount");
+
+const streakCount =
+  document.getElementById("streakCount");
+
+const resetProgress =
+  document.getElementById("resetProgress");
+
+
+// ===============================
+// PROGRESO
+// ===============================
+
+let completed =
+  Number(localStorage.getItem("sleCompleted")) || 0;
+
+let streak =
+  Number(localStorage.getItem("sleStreak")) || 0;
+
+completedCount.textContent = completed;
+streakCount.textContent = streak;
+
+
+// ===============================
+// VARIABLES
+// ===============================
+
+let spinning = false;
+
+let currentChallenge = null;
+
+
+// ===============================
+// FUNCIÓN ALEATORIA
+// ===============================
+
+function randomItem(array) {
+
+  const randomIndex =
+    Math.floor(Math.random() * array.length);
+
+  return array[randomIndex];
 }
 
-function showRandomSlots() {
-  const a = randomItem(activities);
-  const d = randomItem(durations);
-  const c = randomItem(conditions);
-  activityText.textContent = a.name;
-  durationText.textContent = d.name;
-  conditionText.textContent = c.name;
-  activityIcon.textContent = a.icon;
-  durationIcon.textContent = "⏱️";
-  conditionIcon.textContent = c.icon;
+
+// ===============================
+// MOSTRAR VALORES TEMPORALES
+// ===============================
+
+function randomAnimation() {
+
+  const activity = randomItem(activities);
+
+  const duration = randomItem(durations);
+
+  const condition = randomItem(conditions);
+
+
+  activityIcon.textContent =
+    activity.icon;
+
+  activityText.textContent =
+    activity.name;
+
+
+  durationIcon.textContent =
+    "⏱️";
+
+  durationText.textContent =
+    duration.name;
+
+
+  conditionIcon.textContent =
+    condition.icon;
+
+  conditionText.textContent =
+    condition.name;
 }
+
+
+// ===============================
+// GENERAR RETO
+// ===============================
 
 function generateChallenge() {
-  if (isGenerating) return;
-  isGenerating = true;
-  completeMessage.textContent = "";
-  lever.classList.add("active");
 
-  [activityText, durationText, conditionText, activityIcon, durationIcon, conditionIcon]
-    .forEach(el => el.classList.add("spinning"));
-
-  const animation = setInterval(showRandomSlots, 95);
-
-  setTimeout(() => {
-    clearInterval(animation);
-
-    const a = randomItem(activities);
-    const d = randomItem(durations);
-    const c = randomItem(conditions);
-
-    activityText.textContent = a.name;
-    durationText.textContent = d.name;
-    conditionText.textContent = c.name;
-    activityIcon.textContent = a.icon;
-    durationIcon.textContent = "⏱️";
-    conditionIcon.textContent = c.icon;
-    finalChallenge.textContent = `${a.phrase} ${d.phrase} ${c.phrase}.`;
-
-    currentChallengeKey = `${a.name}|${d.name}|${c.name}|${new Date().toDateString()}`;
-
-    [activityText, durationText, conditionText, activityIcon, durationIcon, conditionIcon]
-      .forEach(el => el.classList.remove("spinning"));
-
-    lever.classList.remove("active");
-    isGenerating = false;
-  }, 1700);
-}
-
-function loadProgress() {
-  completedCount.textContent = Number(localStorage.getItem("sleRiseCompleted")) || 0;
-  streakCount.textContent = Number(localStorage.getItem("sleRiseStreak")) || 0;
-}
-
-function completeChallenge() {
-  const today = new Date().toISOString().slice(0, 10);
-  const lastChallenge = localStorage.getItem("sleRiseLastChallengeKey");
-
-  if (currentChallengeKey && currentChallengeKey === lastChallenge) {
-    completeMessage.textContent = "Este reto ya fue marcado como completado. 💜";
+  if (spinning) {
     return;
   }
 
-  let completed = Number(localStorage.getItem("sleRiseCompleted")) || 0;
-  completed += 1;
-  localStorage.setItem("sleRiseCompleted", completed);
+  spinning = true;
 
-  const lastDate = localStorage.getItem("sleRiseLastDate");
-  let streak = Number(localStorage.getItem("sleRiseStreak")) || 0;
+  completeMessage.textContent = "";
 
-  if (!lastDate) {
-    streak = 1;
-  } else if (lastDate !== today) {
-    const previous = new Date(lastDate + "T00:00:00");
-    const current = new Date(today + "T00:00:00");
-    const diffDays = Math.round((current - previous) / 86400000);
-    streak = diffDays === 1 ? streak + 1 : 1;
+
+  // Animación palanca
+  lever.classList.add("active");
+
+
+  // Animación de carretes
+  activityIcon.classList.add("spinning");
+  activityText.classList.add("spinning");
+
+  durationIcon.classList.add("spinning");
+  durationText.classList.add("spinning");
+
+  conditionIcon.classList.add("spinning");
+  conditionText.classList.add("spinning");
+
+
+  const animation =
+    setInterval(randomAnimation, 100);
+
+
+  // Después de 2 segundos termina
+  setTimeout(() => {
+
+    clearInterval(animation);
+
+
+    const activity =
+      randomItem(activities);
+
+    const duration =
+      randomItem(durations);
+
+    const condition =
+      randomItem(conditions);
+
+
+    activityIcon.textContent =
+      activity.icon;
+
+    activityText.textContent =
+      activity.name;
+
+
+    durationIcon.textContent =
+      "⏱️";
+
+    durationText.textContent =
+      duration.name;
+
+
+    conditionIcon.textContent =
+      condition.icon;
+
+    conditionText.textContent =
+      condition.name;
+
+
+    currentChallenge = {
+      activity,
+      duration,
+      condition
+    };
+
+
+    finalChallenge.textContent =
+      `${activity.action} ${duration.text} ${condition.text}.`;
+
+
+    // Quitar animación
+    activityIcon.classList.remove("spinning");
+    activityText.classList.remove("spinning");
+
+    durationIcon.classList.remove("spinning");
+    durationText.classList.remove("spinning");
+
+    conditionIcon.classList.remove("spinning");
+    conditionText.classList.remove("spinning");
+
+
+    lever.classList.remove("active");
+
+    spinning = false;
+
+  }, 2000);
+}
+
+
+// ===============================
+// BOTÓN GENERAR
+// ===============================
+
+generateBtn.addEventListener(
+  "click",
+  generateChallenge
+);
+
+
+// ===============================
+// PALANCA
+// ===============================
+
+lever.addEventListener(
+  "click",
+  generateChallenge
+);
+
+
+// ===============================
+// COMPLETAR RETO
+// ===============================
+
+completeBtn.addEventListener(
+  "click",
+  function () {
+
+    if (!currentChallenge) {
+
+      completeMessage.textContent =
+        "Primero genera un reto. 💜";
+
+      return;
+    }
+
+
+    completed++;
+
+    streak++;
+
+
+    localStorage.setItem(
+      "sleCompleted",
+      completed
+    );
+
+    localStorage.setItem(
+      "sleStreak",
+      streak
+    );
+
+
+    completedCount.textContent =
+      completed;
+
+    streakCount.textContent =
+      streak;
+
+
+    completeMessage.textContent =
+      "¡Excelente! Completaste tu reto. 💜🔥";
+
+
+    currentChallenge = null;
   }
+);
 
-  localStorage.setItem("sleRiseStreak", streak);
-  localStorage.setItem("sleRiseLastDate", today);
-  if (currentChallengeKey) localStorage.setItem("sleRiseLastChallengeKey", currentChallengeKey);
 
-  completeMessage.textContent = "¡Excelente! Tu progreso se guardó en este navegador. 💜";
-  loadProgress();
+// ===============================
+// REINICIAR PROGRESO
+// ===============================
+
+resetProgress.addEventListener(
+  "click",
+  function () {
+
+    const confirmReset =
+      confirm(
+        "¿Seguro que deseas reiniciar tu progreso?"
+      );
+
+
+    if (confirmReset) {
+
+      completed = 0;
+
+      streak = 0;
+
+
+      localStorage.setItem(
+        "sleCompleted",
+        0
+      );
+
+      localStorage.setItem(
+        "sleStreak",
+        0
+      );
+
+
+      completedCount.textContent = 0;
+
+      streakCount.textContent = 0;
+
+
+      alert(
+        "Tu progreso fue reiniciado."
+      );
+    }
+  }
+);
+
+
+// ===============================
+// MENÚ PARA CELULAR
+// ===============================
+
+const menuToggle =
+  document.getElementById("menuToggle");
+
+const navMenu =
+  document.getElementById("navMenu");
+
+
+if (menuToggle && navMenu) {
+
+  menuToggle.addEventListener(
+    "click",
+    function () {
+
+      navMenu.classList.toggle("open");
+
+    }
+  );
+
+
+  const navLinks =
+    navMenu.querySelectorAll("a");
+
+
+  navLinks.forEach(link => {
+
+    link.addEventListener(
+      "click",
+      function () {
+
+        navMenu.classList.remove("open");
+
+      }
+    );
+
+  });
+
 }
-
-function resetAllProgress() {
-  const ok = confirm("¿Seguro que quieres reiniciar tu progreso?");
-  if (!ok) return;
-  ["sleRiseCompleted", "sleRiseStreak", "sleRiseLastDate", "sleRiseLastChallengeKey"]
-    .forEach(key => localStorage.removeItem(key));
-  loadProgress();
-  showToast("Progreso reiniciado.");
-}
-
-function showToast(message) {
-  toast.textContent = message;
-  toast.classList.add("show");
-  clearTimeout(showToast.timer);
-  showToast.timer = setTimeout(() => toast.classList.remove("show"), 2200);
-}
-
-generateBtn.addEventListener("click", generateChallenge);
-lever.addEventListener("click", generateChallenge);
-completeBtn.addEventListener("click", completeChallenge);
-resetProgress.addEventListener("click", resetAllProgress);
-
-menuToggle.addEventListener("click", () => navMenu.classList.toggle("open"));
-navMenu.querySelectorAll("a").forEach(link => link.addEventListener("click", () => navMenu.classList.remove("open")));
-
-document.querySelectorAll("[data-toast]").forEach(button => {
-  button.addEventListener("click", () => showToast(button.dataset.toast));
-});
-
-loadProgress();
